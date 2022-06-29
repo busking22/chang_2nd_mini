@@ -42,16 +42,12 @@ class _AddPageState extends State<AddPage> {
     return Consumer<BankService>(
       builder: (context, service, child) {
         return GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-          },
+          onTap: () {},
           child: Scaffold(
             backgroundColor: TossColor.grey1,
             appBar: AppBar(
               leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () {},
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   color: TossColor.black,
@@ -96,9 +92,7 @@ class _AddPageState extends State<AddPage> {
                             textAlign: TextAlign.end,
                             controller: nameController,
                             focusNode: nameNode,
-                            onSubmitted: (value) {
-                              balanceNode.requestFocus();
-                            },
+                            onSubmitted: (value) {},
                             suffix: const Text("은행"),
                           ),
                         ),
@@ -119,24 +113,7 @@ class _AddPageState extends State<AddPage> {
                             focusNode: balanceNode,
                             keyboardType: TextInputType.number,
                             suffix: const Text("원"),
-                            onChanged: (value) {
-                              if (value != '') {
-                                String s = service.f.format(
-                                  int.tryParse(
-                                    value.replaceAll(
-                                      ',',
-                                      '',
-                                    ),
-                                  ),
-                                );
-                                balanceController.value = TextEditingValue(
-                                  text: s,
-                                  selection: TextSelection.collapsed(
-                                    offset: s.length,
-                                  ),
-                                );
-                              }
-                            },
+                            onChanged: (value) {},
                           ),
                         ),
                       ],

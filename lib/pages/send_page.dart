@@ -39,16 +39,12 @@ class _SendPageState extends State<SendPage> {
     return Consumer<BankService>(
       builder: (context, service, child) {
         return GestureDetector(
-          onTap: () {
-            FocusScope.of(context).unfocus();
-          },
+          onTap: () {},
           child: Scaffold(
             backgroundColor: TossColor.grey1,
             appBar: AppBar(
               leading: IconButton(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+                onPressed: () {},
                 icon: const Icon(
                   Icons.arrow_back_ios,
                   color: TossColor.black,
@@ -99,12 +95,7 @@ class _SendPageState extends State<SendPage> {
                             ),
                           )
                           .toList(),
-                      onChanged: (value) {
-                        setState(() {
-                          toBank = value;
-                        });
-                        moneyNode.requestFocus();
-                      },
+                      onChanged: (value) {},
                     ),
                     const SizedBox(
                       height: 32,
@@ -114,24 +105,7 @@ class _SendPageState extends State<SendPage> {
                       controller: moneyController,
                       focusNode: moneyNode,
                       keyboardType: TextInputType.number,
-                      onChanged: (value) {
-                        if (value != '') {
-                          String s = service.f.format(
-                            int.tryParse(
-                              value.replaceAll(
-                                ',',
-                                '',
-                              ),
-                            ),
-                          );
-                          moneyController.value = TextEditingValue(
-                            text: s,
-                            selection: TextSelection.collapsed(
-                              offset: s.length,
-                            ),
-                          );
-                        }
-                      },
+                      onChanged: (value) {},
                       decoration: const InputDecoration(
                         suffix: Text("원"),
                       ),
@@ -145,48 +119,7 @@ class _SendPageState extends State<SendPage> {
                     ),
                     const Spacer(),
                     ElevatedButton(
-                      onPressed: () {
-                        if ((widget.fromBank.balance ?? 0) <
-                            (int.tryParse(
-                                  moneyController.text.replaceAll(',', ''),
-                                ) ??
-                                0)) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              backgroundColor: TossColor.bluegrey,
-                              content: Text("잔액이 부족해요"),
-                            ),
-                          );
-                        } else if (toBank != null && moneyController.text != '') {
-                          showDialog(
-                            context: context,
-                            builder: (context) {
-                              return AlertDialog(
-                                content: Image.asset(
-                                  'assets/money_icon.png',
-                                  width: 32,
-                                ),
-                                title: Text(
-                                  '${toBank?.name} 으로 ${int.tryParse(
-                                    moneyController.text.replaceAll(',', ''),
-                                  )} 원을 보내시겠어요?',
-                                  style: const TextStyle(
-                                    color: TossColor.black,
-                                    fontSize: 24,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                ),
-                                actions: [
-                                  TextButton(
-                                    onPressed: () {},
-                                    child: const Text("보내기"),
-                                  )
-                                ],
-                              );
-                            },
-                          );
-                        }
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 52),
                         onPrimary: TossColor.white,

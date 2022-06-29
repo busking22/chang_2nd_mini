@@ -1,6 +1,5 @@
 import 'package:chang_mini/config/colors.dart';
 import 'package:chang_mini/model/bank.dart';
-import 'package:chang_mini/pages/send_page.dart';
 import 'package:chang_mini/services/bank_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -42,16 +41,7 @@ class BankContainer extends StatelessWidget {
           ),
           contentPadding: EdgeInsets.zero,
           trailing: ElevatedButton(
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SendPage(
-                    fromBank: bank,
-                  ),
-                ),
-              );
-            },
+            onPressed: () {},
             style: ElevatedButton.styleFrom(
               onPrimary: TossColor.bluegrey,
               primary: TossColor.grey2,

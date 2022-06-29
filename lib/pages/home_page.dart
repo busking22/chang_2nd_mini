@@ -1,6 +1,5 @@
 import 'package:chang_mini/components/bank_container.dart';
 import 'package:chang_mini/config/colors.dart';
-import 'package:chang_mini/pages/add_page.dart';
 import 'package:chang_mini/services/bank_service.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -80,12 +79,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           const Spacer(),
                           IconButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(builder: (context) => const AddPage()),
-                              );
-                            },
+                            onPressed: () {},
                             icon: const Icon(
                               Icons.add,
                             ),
