@@ -1,4 +1,3 @@
-import 'package:chang_mini/config/colors.dart';
 import 'package:chang_mini/model/bank.dart';
 import 'package:chang_mini/services/bank_service.dart';
 import 'package:flutter/material.dart';
@@ -24,28 +23,14 @@ class BankContainer extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 4.0),
             child: Text(
               bank.name ?? "부산은행 계좌",
-              style: const TextStyle(
-                color: TossColor.bluegrey,
-                fontSize: 12,
-                fontWeight: FontWeight.w200,
-              ),
             ),
           ),
           subtitle: Text(
             "${service.f.format(bank.balance)} 원",
-            style: const TextStyle(
-              color: TossColor.black,
-              fontWeight: FontWeight.w700,
-              fontSize: 14,
-            ),
           ),
           contentPadding: EdgeInsets.zero,
           trailing: ElevatedButton(
             onPressed: () {},
-            style: ElevatedButton.styleFrom(
-              onPrimary: TossColor.bluegrey,
-              primary: TossColor.grey2,
-            ),
             child: const Text("송금"),
           ),
         );

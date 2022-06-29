@@ -54,10 +54,6 @@ class _HomePageState extends State<HomePage> {
             child: ListView(
               children: [
                 Container(
-                  decoration: BoxDecoration(
-                    color: TossColor.white,
-                    borderRadius: BorderRadius.circular(16),
-                  ),
                   padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                   child: Column(
                     children: [
@@ -70,11 +66,6 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: const Text(
                               '자산',
-                              style: TextStyle(
-                                color: TossColor.bluegrey,
-                                fontSize: 20,
-                                fontWeight: FontWeight.w700,
-                              ),
                             ),
                           ),
                           const Spacer(),

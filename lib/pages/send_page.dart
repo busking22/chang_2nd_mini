@@ -47,7 +47,6 @@ class _SendPageState extends State<SendPage> {
                 onPressed: () {},
                 icon: const Icon(
                   Icons.arrow_back_ios,
-                  color: TossColor.black,
                 ),
               ),
               backgroundColor: TossColor.grey1,
@@ -65,22 +64,12 @@ class _SendPageState extends State<SendPage> {
                   children: [
                     const Text(
                       "송금하기",
-                      style: TextStyle(
-                        color: TossColor.black,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
                     ),
                     const SizedBox(
                       height: 16,
                     ),
                     const Text(
                       "어디로 보낼까요?",
-                      style: TextStyle(
-                        color: TossColor.blue,
-                        fontSize: 16,
-                        fontWeight: FontWeight.normal,
-                      ),
                     ),
                     const SizedBox(
                       height: 8,
@@ -100,16 +89,7 @@ class _SendPageState extends State<SendPage> {
                     const SizedBox(
                       height: 32,
                     ),
-                    TextFormField(
-                      textAlign: TextAlign.end,
-                      controller: moneyController,
-                      focusNode: moneyNode,
-                      keyboardType: TextInputType.number,
-                      onChanged: (value) {},
-                      decoration: const InputDecoration(
-                        suffix: Text("원"),
-                      ),
-                    ),
+                    TextFormField(),
                     const SizedBox(
                       height: 16,
                     ),
@@ -120,11 +100,6 @@ class _SendPageState extends State<SendPage> {
                     const Spacer(),
                     ElevatedButton(
                       onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        minimumSize: const Size(double.infinity, 52),
-                        onPrimary: TossColor.white,
-                        primary: TossColor.blue,
-                      ),
                       child: const Text("보내기"),
                     ),
                   ],
