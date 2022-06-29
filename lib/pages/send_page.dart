@@ -178,21 +178,7 @@ class _SendPageState extends State<SendPage> {
                                 ),
                                 actions: [
                                   TextButton(
-                                    onPressed: () {
-                                      service.sendMoney(
-                                        widget.fromBank,
-                                        toBank!,
-                                        int.tryParse(moneyController.text.replaceAll(',', '')) ?? 0,
-                                      );
-                                      Navigator.pop(context);
-                                      Navigator.pop(context);
-                                      ScaffoldMessenger.of(context).showSnackBar(
-                                        const SnackBar(
-                                          backgroundColor: TossColor.blue,
-                                          content: Text("전송 완료"),
-                                        ),
-                                      );
-                                    },
+                                    onPressed: () {},
                                     child: const Text("보내기"),
                                   )
                                 ],

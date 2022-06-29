@@ -12,16 +12,4 @@ class BankService extends ChangeNotifier {
 
     notifyListeners();
   }
-
-  Future<bool> sendMoney(Bank fromBank, Bank toBank, int money) async {
-    if ((fromBank.balance ?? 0) < money) {
-      return false;
-    }
-
-    fromBank.balance = (fromBank.balance ?? 0) - money;
-    toBank.balance = (toBank.balance ?? 0) + money;
-
-    notifyListeners();
-    return true;
-  }
 }
