@@ -6,10 +6,4 @@ class BankService extends ChangeNotifier {
   var f = NumberFormat('###,###,###,###');
 
   List<Bank> myBankList = [];
-
-  createdBank(Bank bank) async {
-    myBankList.add(bank);
-
-    notifyListeners();
-  }
 }

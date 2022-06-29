@@ -1,7 +1,4 @@
-import 'dart:math';
-
 import 'package:chang_mini/config/colors.dart';
-import 'package:chang_mini/model/bank.dart';
 import 'package:chang_mini/services/bank_service.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -44,23 +41,6 @@ class _AddPageState extends State<AddPage> {
   Widget build(BuildContext context) {
     return Consumer<BankService>(
       builder: (context, service, child) {
-        String pickRandomImageOfBank() {
-          double ranDouble = Random().nextDouble();
-          if (ranDouble < 0.33) return 'assets/kakao_bank.png';
-          if (ranDouble < 0.67) return 'assets/sinhan_bank.png';
-          return 'assets/toss_bank.png';
-        }
-
-        createBank() {
-          service.createdBank(
-            Bank(
-              name: nameController.text,
-              balance: int.tryParse(balanceController.text.replaceAll(',', '')) ?? 0,
-              bankImage: pickRandomImageOfBank(),
-            ),
-          );
-        }
-
         return GestureDetector(
           onTap: () {
             FocusScope.of(context).unfocus();
@@ -81,12 +61,7 @@ class _AddPageState extends State<AddPage> {
               elevation: 0,
               actions: [
                 TextButton(
-                  onPressed: () {
-                    if (nameController.text != '' && balanceController.text != '') {
-                      createBank();
-                      Navigator.pop(context);
-                    }
-                  },
+                  onPressed: () {},
                   child: const Text("확인"),
                 ),
               ],
@@ -212,20 +187,7 @@ class _AddPageState extends State<AddPage> {
                       height: 32,
                     ),
                     ElevatedButton(
-                      onPressed: () {
-                        if (nameNode.hasFocus) {
-                          balanceNode.requestFocus();
-                        } else if (nameController.text != '' && balanceController.text != '') {
-                          createBank();
-                          Navigator.pop(context);
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              backgroundColor: TossColor.blue,
-                              content: Text("개설 완료"),
-                            ),
-                          );
-                        }
-                      },
+                      onPressed: () {},
                       style: ElevatedButton.styleFrom(
                         minimumSize: const Size(double.infinity, 52),
                         onPrimary: TossColor.white,
